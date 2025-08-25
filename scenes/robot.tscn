@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://by7txrvwyhlkn"]
+
+[ext_resource type="Script" uid="uid://iulywogq7nj6" path="res://scripts/robot_1.gd" id="1_ykvnc"]
+[ext_resource type="Texture2D" uid="uid://br1e4qb10rar4" path="res://assets/sprites/robot.png" id="2_i42o3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ykc4"]
+atlas = ExtResource("2_i42o3")
+region = Rect2(0, 0, 100, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkwjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ykc4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ombv"]
+size = Vector2(41.9844, 66.9939)
+
+[node name="Robot" type="CharacterBody2D"]
+position = Vector2(568, 323)
+scale = Vector2(0.857463, 0.77619)
+script = ExtResource("1_ykvnc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.07135, -8.57365)
+scale = Vector2(1.14143, 1.15588)
+sprite_frames = SubResource("SpriteFrames_nkwjq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.16626, 16.7485)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3ombv")

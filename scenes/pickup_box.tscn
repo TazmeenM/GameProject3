@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7cwfhp30lxr3"]
+
+[ext_resource type="Script" uid="uid://bkqlpuahei2cp" path="res://scripts/pickup_box.gd" id="1_04xm2"]
+[ext_resource type="Texture2D" uid="uid://bprls3wdn72i8" path="res://assets/sprites/placeholderCharacter.png" id="2_r75sb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crjj7"]
+size = Vector2(82, 81)
+
+[node name="PickupBox" type="Area2D"]
+script = ExtResource("1_04xm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(570, 177)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("2_r75sb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(570, 176.5)
+shape = SubResource("RectangleShape2D_crjj7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

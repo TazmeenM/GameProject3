@@ -1,35 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbyeeuhst86xk"]
+[gd_scene load_steps=5 format=3 uid="uid://bbyeeuhst86xk"]
 
 [ext_resource type="Texture2D" uid="uid://c7xhs0rda0fuf" path="res://assets/sprites/background.png" id="1_w2twt"]
-[ext_resource type="Script" uid="uid://iulywogq7nj6" path="res://scripts/robot_1.gd" id="2_pu3yx"]
-[ext_resource type="Texture2D" uid="uid://br1e4qb10rar4" path="res://assets/sprites/robot.png" id="2_pw63i"]
-[ext_resource type="Texture2D" uid="uid://bprls3wdn72i8" path="res://assets/sprites/placeholderCharacter.png" id="3_7ykc4"]
-[ext_resource type="Script" uid="uid://c8hp85a8ah3kl" path="res://scripts/dropoff_box.gd" id="4_gubc5"]
-[ext_resource type="Script" uid="uid://bkqlpuahei2cp" path="res://scripts/pickup_box.gd" id="4_rt2n2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
-size = Vector2(80, 80)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt2n2"]
-size = Vector2(82, 81)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ykc4"]
-atlas = ExtResource("2_pw63i")
-region = Rect2(0, 0, 100, 110)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pu3yx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ykc4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu3yx"]
-size = Vector2(41.9844, 66.9939)
+[ext_resource type="PackedScene" uid="uid://by7txrvwyhlkn" path="res://scenes/robot.tscn" id="2_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://b7cwfhp30lxr3" path="res://scenes/pickup_box.tscn" id="3_gubc5"]
+[ext_resource type="PackedScene" uid="uid://djxsjuoyjbay2" path="res://scenes/dropoff_box.tscn" id="4_rt2n2"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -38,45 +12,11 @@ position = Vector2(568, 323)
 scale = Vector2(0.857463, 0.77619)
 texture = ExtResource("1_w2twt")
 
-[node name="DropoffBox" type="Area2D" parent="."]
-script = ExtResource("4_gubc5")
+[node name="Robot" parent="." instance=ExtResource("2_pu3yx")]
+position = Vector2(585, 292)
 
-[node name="Sprite2D" type="Sprite2D" parent="DropoffBox"]
-position = Vector2(568, 411)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_7ykc4")
+[node name="PickupBox" parent="." instance=ExtResource("3_gubc5")]
+position = Vector2(13, -24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DropoffBox"]
-position = Vector2(568, 411)
-shape = SubResource("RectangleShape2D_gubc5")
-
-[node name="PickupBox" type="Area2D" parent="."]
-script = ExtResource("4_rt2n2")
-
-[node name="Sprite2D" type="Sprite2D" parent="PickupBox"]
-position = Vector2(570, 177)
-scale = Vector2(0.81, 0.81)
-texture = ExtResource("3_7ykc4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupBox"]
-position = Vector2(570, 176.5)
-shape = SubResource("RectangleShape2D_rt2n2")
-
-[node name="Robot1" type="CharacterBody2D" parent="."]
-position = Vector2(568, 323)
-scale = Vector2(0.857463, 0.77619)
-script = ExtResource("2_pu3yx")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Robot1"]
-position = Vector2(7.07135, -8.57365)
-scale = Vector2(1.14143, 1.15588)
-sprite_frames = SubResource("SpriteFrames_pu3yx")
-frame_progress = 0.136589
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot1"]
-position = Vector2(-1.16626, 16.7485)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_pu3yx")
-
-[connection signal="body_entered" from="DropoffBox" to="DropoffBox" method="_on_body_entered"]
-[connection signal="body_entered" from="PickupBox" to="PickupBox" method="_on_body_entered"]
+[node name="DropoffBox" parent="." instance=ExtResource("4_rt2n2")]
+position = Vector2(20, 49)

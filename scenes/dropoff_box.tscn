@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://djxsjuoyjbay2"]
+
+[ext_resource type="Script" uid="uid://c8hp85a8ah3kl" path="res://scripts/dropoff_box.gd" id="1_4hceb"]
+[ext_resource type="Texture2D" uid="uid://bprls3wdn72i8" path="res://assets/sprites/placeholderCharacter.png" id="2_1l03c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2oeo"]
+size = Vector2(80, 80)
+
+[node name="DropoffBox" type="Area2D"]
+script = ExtResource("1_4hceb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568, 411)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_1l03c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(568, 411)
+shape = SubResource("RectangleShape2D_n2oeo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
