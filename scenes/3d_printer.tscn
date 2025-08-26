@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ig0ys5ixt1xu"]
+
+[ext_resource type="Texture2D" uid="uid://biwq5byi2djf7" path="res://assets/sprites/3DPrinter.png" id="1_ikaod"]
+
+[node name="3DPrinter" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ikaod")
