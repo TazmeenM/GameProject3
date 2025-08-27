@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://2pp5c3jl8rgi"]
+
+[ext_resource type="Script" uid="uid://daswkfjm5vtjd" path="res://scripts/shop_row.gd" id="1_exkpj"]
+[ext_resource type="PackedScene" uid="uid://bxe8uh23sxp68" path="res://scenes/incrementor.tscn" id="2_sjg1e"]
+
+[node name="ShopRow" type="Node2D"]
+script = ExtResource("1_exkpj")
+
+[node name="FruitImage" type="Sprite2D" parent="."]
+
+[node name="Incrementor" parent="." instance=ExtResource("2_sjg1e")]
+position = Vector2(87, -2)
+
+[node name="SellButton" type="Button" parent="."]
+offset_left = 226.0
+offset_top = -11.0
+offset_right = 273.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="SellButton"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -3.0
+offset_right = 50.0
+offset_bottom = 20.0
+text = "Sell"
+
+[connection signal="pressed" from="SellButton" to="." method="_on_sell_button_pressed"]

@@ -1,4 +1,4 @@
-extends Area2D
+class_name Fruit extends Area2D
 
 @onready var resources: Resources = $"../../Resources"
 @onready var sprite_2d: Sprite2D = $Sprite2D

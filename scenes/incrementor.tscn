@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxe8uh23sxp68"]
+
+[ext_resource type="Texture2D" uid="uid://dxs1xlareyrdl" path="res://assets/sprites/minusButton.png" id="1_tjp14"]
+[ext_resource type="Script" uid="uid://bc3swu42u6bn3" path="res://scripts/incrementor.gd" id="1_uwm3l"]
+[ext_resource type="Texture2D" uid="uid://d3uefsk2p5n1g" path="res://assets/sprites/plusButton.png" id="2_uwm3l"]
+
+[node name="Incrementor" type="Node2D"]
+script = ExtResource("1_uwm3l")
+
+[node name="DecreaseButton" type="Button" parent="."]
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 10.0
+icon = ExtResource("1_tjp14")
+expand_icon = true
+
+[node name="Quantity" type="Label" parent="."]
+offset_left = 27.0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 11.0
+text = "0"
+
+[node name="IncreaseButton" type="Button" parent="."]
+offset_left = 51.0
+offset_top = -9.0
+offset_right = 70.0
+offset_bottom = 10.0
+icon = ExtResource("2_uwm3l")
+expand_icon = true
+
+[connection signal="pressed" from="DecreaseButton" to="." method="_on_decrease_button_pressed"]
+[connection signal="pressed" from="IncreaseButton" to="." method="_on_increase_button_pressed"]

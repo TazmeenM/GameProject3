@@ -4,6 +4,9 @@ static var numberOfResources = 0
 static var numberOfFruits = 0
 static var numberOfApples = 0
 static var numberOfOranges = 0
+static var money = 0
+static var appleWorth = 10
+static var orangeWorth = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

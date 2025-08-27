@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://6rh1ravu772u"]
+[gd_scene load_steps=6 format=3 uid="uid://6rh1ravu772u"]
 
 [ext_resource type="Script" uid="uid://d4h30s2xqacga" path="res://scripts/shop.gd" id="1_1l46r"]
 [ext_resource type="Texture2D" uid="uid://deg5sjv6v35i0" path="res://assets/sprites/shopBackground.png" id="1_lx5au"]
 [ext_resource type="Texture2D" uid="uid://1b4i1vljuvq6" path="res://assets/sprites/exitButton.png" id="3_032fp"]
+[ext_resource type="Texture2D" uid="uid://bt0vyxrvopa5i" path="res://assets/sprites/apple.png" id="4_032fp"]
+[ext_resource type="PackedScene" uid="uid://2pp5c3jl8rgi" path="res://scenes/shop_row.tscn" id="5_2fc2m"]
 
 [node name="Shop" type="Node2D"]
 script = ExtResource("1_1l46r")
@@ -19,5 +21,17 @@ offset_right = 1086.0
 offset_bottom = 87.0
 icon = ExtResource("3_032fp")
 expand_icon = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(121.25, 114.333)
+scale = Vector2(1.88095, 1.88095)
+texture = ExtResource("4_032fp")
+
+[node name="ShopRow" parent="." instance=ExtResource("5_2fc2m")]
+position = Vector2(103, 78)
+imageName = "apple"
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
