@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3n4l3y0bjh2x"]
+[gd_scene load_steps=5 format=3 uid="uid://d3n4l3y0bjh2x"]
 
 [ext_resource type="Shader" uid="uid://cqfav12rwj3st" path="res://scripts/shaders/appleShader.gdshader" id="1_7vr8k"]
 [ext_resource type="Texture2D" uid="uid://bt0vyxrvopa5i" path="res://assets/sprites/apple.png" id="2_3dmh2"]
+[ext_resource type="Script" uid="uid://byvjux588gvep" path="res://scripts/apple.gd" id="3_3dmh2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pg1xk"]
 shader = ExtResource("1_7vr8k")
@@ -14,3 +15,4 @@ material = SubResource("ShaderMaterial_pg1xk")
 position = Vector2(-1, -1)
 scale = Vector2(0.630952, 0.630952)
 texture = ExtResource("2_3dmh2")
+script = ExtResource("3_3dmh2")
