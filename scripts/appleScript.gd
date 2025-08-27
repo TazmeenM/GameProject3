@@ -1,7 +1,7 @@
 extends Area2D
 var percentageOfApple: float = 0
 var amountOfResources = 0
-var capacity = 10
+var capacity: float = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

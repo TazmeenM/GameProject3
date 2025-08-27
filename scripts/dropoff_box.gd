@@ -23,9 +23,13 @@ func _on_body_entered(body: Node2D) -> void:
 			numberOfResources += body.numberOfResourcesCarrying
 			body.numberOfResourcesCarrying = 0
 			if (apple.capacity - numberOfResources >= 0):
+				print("Number of Resources: " + str(numberOfResources))
+				print("Apple capacity: " + str(apple.capacity))
+				print(numberOfResources/apple.capacity)
 				apple.percentageOfApple = numberOfResources/apple.capacity
 				print("Apple percentage: " + str(apple.percentageOfApple))
 			else:
 				apple.percentageOfApple = 1
+				print("Apple percentage full")
 		body.yDirection = body.yDirection*-1
 		print(body.yDirection)
