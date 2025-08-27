@@ -16,4 +16,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	heightShown = sizeOfApple.y*(apple.percentageOfApple/100)
+	topYPosition = sizeOfApple.y - heightShown
+	print("Height Shown: " + str(heightShown))
 	region_rect = Rect2(0, topYPosition, sizeOfApple.x, heightShown)
