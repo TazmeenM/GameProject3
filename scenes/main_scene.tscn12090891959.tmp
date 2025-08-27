@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbyeeuhst86xk"]
+
+[ext_resource type="Texture2D" uid="uid://c7xhs0rda0fuf" path="res://assets/sprites/background.png" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://by7txrvwyhlkn" path="res://scenes/robot.tscn" id="2_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://b7cwfhp30lxr3" path="res://scenes/pickup_box.tscn" id="3_gubc5"]
+[ext_resource type="PackedScene" uid="uid://djxsjuoyjbay2" path="res://scenes/dropoff_box.tscn" id="4_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://d3n4l3y0bjh2x" path="res://scenes/apple.tscn" id="5_gubc5"]
+[ext_resource type="PackedScene" uid="uid://ig0ys5ixt1xu" path="res://scenes/3d_printer.tscn" id="6_rt2n2"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(568, 323)
+scale = Vector2(0.857463, 0.77619)
+texture = ExtResource("1_w2twt")
+
+[node name="Robot" parent="." instance=ExtResource("2_pu3yx")]
+z_index = 2
+position = Vector2(585, 292)
+
+[node name="PickupBox" parent="." instance=ExtResource("3_gubc5")]
+position = Vector2(13, -24)
+
+[node name="DropoffBox" parent="." instance=ExtResource("4_rt2n2")]
+position = Vector2(20, 49)
+
+[node name="Apple" parent="." instance=ExtResource("5_gubc5")]
+z_index = 1
+position = Vector2(583, 163)
+
+[node name="3DPrinter" parent="." instance=ExtResource("6_rt2n2")]
+position = Vector2(582, 155)

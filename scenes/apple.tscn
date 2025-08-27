@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3n4l3y0bjh2x"]
+[gd_scene load_steps=6 format=3 uid="uid://d3n4l3y0bjh2x"]
 
 [ext_resource type="Shader" uid="uid://cqfav12rwj3st" path="res://scripts/shaders/appleShader.gdshader" id="1_7vr8k"]
 [ext_resource type="Texture2D" uid="uid://bt0vyxrvopa5i" path="res://assets/sprites/apple.png" id="2_3dmh2"]
+[ext_resource type="Script" uid="uid://wr31loceh5ap" path="res://scripts/appleScript.gd" id="2_pg1xk"]
 [ext_resource type="Script" uid="uid://byvjux588gvep" path="res://scripts/apple.gd" id="3_3dmh2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pg1xk"]
@@ -10,6 +11,7 @@ shader_parameter/percentOfAppleFilled = 0.0
 
 [node name="Apple" type="Area2D"]
 material = SubResource("ShaderMaterial_pg1xk")
+script = ExtResource("2_pg1xk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -1)

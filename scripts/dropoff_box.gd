@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var robot_1: CharacterBody2D = $"../Background/Robot1"
+@onready var apple: Area2D = $"../Apple"
+
 
 var numberOfResources = 0
 
@@ -16,5 +18,14 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Robot:
+		#Checking whether or not the apple is at full capacity
+		if numberOfResources < apple.capacity:
+			numberOfResources += body.numberOfResourcesCarrying
+			body.numberOfResourcesCarrying = 0
+			if (apple.capacity - numberOfResources > 0):
+				apple.percentageOfApple = numberOfResources*100/apple.capacity
+				print("Apple percentage: " + str(apple.percentageOfApple))
+			else:
+				print("Not added")
 		body.yDirection = body.yDirection*-1
 		print(body.yDirection)
