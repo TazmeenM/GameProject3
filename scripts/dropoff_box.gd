@@ -30,6 +30,6 @@ func _on_body_entered(body: Node2D) -> void:
 			else:
 				apple.percentageOfApple = 1
 				print("Apple percentage full")
-			body.numberOfResourcesCarrying = 0
+		body.numberOfResourcesCarrying = 0
 		body.yDirection = body.yDirection*-1
 		print(body.yDirection)
