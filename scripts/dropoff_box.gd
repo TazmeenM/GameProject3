@@ -21,7 +21,6 @@ func _on_body_entered(body: Node2D) -> void:
 		#Checking whether or not the apple is at full capacity
 		if numberOfResources < apple.capacity:
 			numberOfResources += body.numberOfResourcesCarrying
-			body.numberOfResourcesCarrying = 0
 			if (apple.capacity - numberOfResources >= 0):
 				print("Number of Resources: " + str(numberOfResources))
 				print("Apple capacity: " + str(apple.capacity))
@@ -31,5 +30,6 @@ func _on_body_entered(body: Node2D) -> void:
 			else:
 				apple.percentageOfApple = 1
 				print("Apple percentage full")
+			body.numberOfResourcesCarrying = 0
 		body.yDirection = body.yDirection*-1
 		print(body.yDirection)

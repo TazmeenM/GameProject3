@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var resources: Resources = $"../../Resources"
+@onready var dropoff_box: Area2D = $"../DropoffBox"
 
 var percentageOfApple: float = 0
 var amountOfResources = 0
@@ -26,3 +27,4 @@ func pickUp() -> void:
 	percentageOfApple = 0
 	amountOfResources = 0
 	resources.addApples(numberOfApplesAtOnce)
+	dropoff_box.numberOfResources = 0
