@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bp2ww00oqrb7n" path="res://scripts/dropoff_box_system.gd" id="1_60fq7"]
 [ext_resource type="PackedScene" uid="uid://djxsjuoyjbay2" path="res://scenes/dropoff_box.tscn" id="1_yb65o"]
-[ext_resource type="PackedScene" uid="uid://d3n4l3y0bjh2x" path="res://scenes/apple.tscn" id="2_60fq7"]
 [ext_resource type="PackedScene" uid="uid://ig0ys5ixt1xu" path="res://scenes/3d_printer.tscn" id="3_4cvs2"]
+[ext_resource type="PackedScene" uid="uid://c7fm1novunia2" path="res://scenes/fruit.tscn" id="5_4cvs2"]
 
 [node name="DropoffBoxSystem" type="Node2D"]
 script = ExtResource("1_60fq7")
@@ -11,18 +11,18 @@ script = ExtResource("1_60fq7")
 [node name="DropoffBox" parent="." instance=ExtResource("1_yb65o")]
 position = Vector2(0, 1)
 
-[node name="Apple" parent="." instance=ExtResource("2_60fq7")]
-z_index = 1
-position = Vector2(1, 5)
-
 [node name="3DPrinter" parent="." instance=ExtResource("3_4cvs2")]
 position = Vector2(0, -2)
 
-[node name="AppleButton" type="Button" parent="."]
+[node name="FruitButton" type="Button" parent="."]
 offset_left = -7.0
 offset_top = -5.0
 offset_right = 7.0
 offset_bottom = 13.0
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="AppleButton" to="Apple" method="_on_apple_button_pressed"]
+[node name="Fruit" parent="." node_paths=PackedStringArray("dropoff_box") instance=ExtResource("5_4cvs2")]
+position = Vector2(1, 3)
+dropoff_box = NodePath("../DropoffBox")
+
+[connection signal="pressed" from="FruitButton" to="Fruit" method="_on_fruit_button_pressed"]

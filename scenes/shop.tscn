@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://6rh1ravu772u"]
+
+[ext_resource type="Texture2D" uid="uid://deg5sjv6v35i0" path="res://assets/sprites/shopBackground.png" id="1_lx5au"]
+
+[node name="Shop" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 323.5)
+scale = Vector2(11.5, 6.47)
+texture = ExtResource("1_lx5au")

@@ -13,15 +13,26 @@ position = Vector2(568, 323)
 scale = Vector2(0.857463, 0.77619)
 texture = ExtResource("1_w2twt")
 
-[node name="Robot" parent="." instance=ExtResource("2_pu3yx")]
+[node name="AppleRobot" parent="." instance=ExtResource("2_pu3yx")]
 z_index = 2
-position = Vector2(585, 292)
+position = Vector2(1157, 640)
 
-[node name="PickupBox" parent="." instance=ExtResource("3_gubc5")]
+[node name="PickupBoxApple" parent="." instance=ExtResource("3_gubc5")]
 position = Vector2(592, 478)
 
-[node name="DropoffBoxSystem" parent="." instance=ExtResource("7_c16ls")]
-position = Vector2(585, 133)
+[node name="DropoffBoxSystemApple" parent="." instance=ExtResource("7_c16ls")]
+position = Vector2(591, 129)
+imageName = "apple"
 
 [node name="Resources" parent="." instance=ExtResource("5_gubc5")]
 position = Vector2(1, 4)
+
+[node name="DropoffBoxSystemOrange2" parent="." instance=ExtResource("7_c16ls")]
+position = Vector2(764, 130)
+imageName = "orange"
+
+[node name="PickupBoxOrange" parent="." instance=ExtResource("3_gubc5")]
+position = Vector2(767, 476)
+
+[node name="Robot" parent="." instance=ExtResource("2_pu3yx")]
+position = Vector2(1335, 638)

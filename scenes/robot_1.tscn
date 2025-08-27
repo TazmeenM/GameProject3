@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://x8dpbjqd5ba2"]
+[gd_scene load_steps=6 format=3 uid="uid://d26t7xl1h62lr"]
 
 [ext_resource type="Script" uid="uid://iulywogq7nj6" path="res://scripts/robot_1.gd" id="1_hymnl"]
 [ext_resource type="Texture2D" uid="uid://br1e4qb10rar4" path="res://assets/sprites/robot.png" id="2_77u51"]
@@ -33,5 +33,4 @@ sprite_frames = SubResource("SpriteFrames_nkwjq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.16626, 16.7485)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3ombv")

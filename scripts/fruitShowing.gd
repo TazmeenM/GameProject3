@@ -8,6 +8,7 @@ var topYPosition
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sizeOfFruit = texture.get_size()
 	heightShown = sizeOfFruit.y*(fruit.percentageOfFruit)
 	topYPosition = sizeOfFruit.y - heightShown
 	region_enabled = true
