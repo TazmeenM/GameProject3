@@ -15,3 +15,11 @@ position = Vector2(1, 5)
 
 [node name="3DPrinter" parent="." instance=ExtResource("3_4cvs2")]
 position = Vector2(0, -2)
+
+[node name="AppleButton" type="Button" parent="."]
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 7.0
+offset_bottom = 13.0
+
+[connection signal="pressed" from="AppleButton" to="Apple" method="_on_apple_button_pressed"]
