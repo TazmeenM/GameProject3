@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://7ddjly2qpkjo"]
+
+[ext_resource type="PackedScene" uid="uid://djxsjuoyjbay2" path="res://scenes/dropoff_box.tscn" id="1_d775n"]
+[ext_resource type="PackedScene" uid="uid://d3n4l3y0bjh2x" path="res://scenes/apple.tscn" id="2_ub1wk"]
+[ext_resource type="PackedScene" uid="uid://ig0ys5ixt1xu" path="res://scenes/3d_printer.tscn" id="3_imumg"]
+
+[node name="DropoffBoxSystemOrange" type="Node2D"]
+
+[node name="DropoffBox" parent="." instance=ExtResource("1_d775n")]
+position = Vector2(0, 1)
+
+[node name="Apple" parent="." instance=ExtResource("2_ub1wk")]
+z_index = 1
+position = Vector2(1, 5)
+
+[node name="3DPrinter" parent="." instance=ExtResource("3_imumg")]
+position = Vector2(0, -2)
+
+[node name="AppleButton" type="Button" parent="."]
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 7.0
+offset_bottom = 13.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="AppleButton" to="Apple" method="_on_apple_button_pressed"]
