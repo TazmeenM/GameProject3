@@ -18,10 +18,9 @@ var fruits = [["apple", 10], ["orange", 15], ["pear", 20], ["cherries", 25]]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	imagePath += imageName + ".png"
-	sprite_2d.texture = load(imagePath)
+	imageName = dropoff_box_system.imageName
 	for fruit in fruits:
-		if dropoff_box_system.imageName == fruit[0]:
+		if imageName == fruit[0]:
 			capacity = fruit[1]
 			print("Fruit Capacity: " + str(capacity))
 

@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 func _on_decrease_button_pressed() -> void:
 	if numberOfUnits > 0:
 		numberOfUnits -= 1
+		quantity.text = numberOfUnits
 
 
 func _on_increase_button_pressed() -> void:
@@ -28,3 +29,6 @@ func _on_increase_button_pressed() -> void:
 		if numberOfUnits < Resources.numberOfApples:
 			numberOfUnits += 1
 			print("Number of Units Selling: " + str(numberOfUnits))
+			quantity.text = str(numberOfUnits)
+		else:
+			print("Number of Apples Available: " + str(Resources.numberOfApples))
