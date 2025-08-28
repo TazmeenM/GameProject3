@@ -34,4 +34,6 @@ func _on_buy_button_pressed() -> void:
 	
 	for key in isBought:
 		if key == imageName:
-			isBought[key]["bought"] = true
+			if Resources.money >= isBought[key]["price"]:
+				isBought[key]["bought"] = true
+				Resources.money -= isBought[key]["price"]
