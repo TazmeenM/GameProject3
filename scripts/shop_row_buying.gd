@@ -5,6 +5,8 @@ class_name ShopBuying extends Node2D
 @onready var fruit_image: Sprite2D = $FruitImage
 @onready var incrementor: Node2D = $Incrementor
 @onready var product_label: Label = $ProductLabel
+@onready var price_label: Label = $PriceLabel
+
 
 static var isBought = {
 	"orange": {
@@ -20,7 +22,8 @@ static var isBought = {
 func _ready() -> void:
 	imagePath += imageName + ".png"
 	fruit_image.texture = load(imagePath)
-	product_label.text = imageName.to_upper() + "PRODUCTION"
+	product_label.text = imageName.to_upper() + " PRODUCTION"
+	price_label.text = "PRICE: " + str(isBought[imageName]["price"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

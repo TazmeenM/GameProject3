@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnp2xkqkwb1h4" path="res://scripts/shop_row_buying.gd" id="1_opng3"]
 
-[node name="ShopRow" type="Node2D"]
+[node name="ShopRowBuying" type="Node2D"]
 script = ExtResource("1_opng3")
 
 [node name="FruitImage" type="Sprite2D" parent="."]
@@ -30,6 +30,13 @@ offset_right = 31.0
 offset_bottom = -16.0
 text = "PLACEHOLDER"
 metadata/_edit_use_anchors_ = true
+
+[node name="PriceLabel" type="Label" parent="."]
+offset_left = 71.0
+offset_top = -12.0
+offset_right = 111.0
+offset_bottom = 11.0
+text = "PRICE:"
 
 [connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]
 [connection signal="pressed" from="BuyButton" to="." method="_on_sell_button_pressed"]
