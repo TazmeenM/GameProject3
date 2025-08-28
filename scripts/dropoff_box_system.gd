@@ -12,6 +12,7 @@ extends Node2D
 func _ready() -> void:
 	imagePath += imageName + ".png"
 	fruit.sprite_2d.texture = load(imagePath)
+	fruit_button.modulate.a = 0.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

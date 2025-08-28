@@ -57,4 +57,19 @@ text = "Sell"
 [node name="Money" parent="." instance=ExtResource("7_18nlu")]
 position = Vector2(12, 5)
 
+[node name="ShopBuyingButton" type="Button" parent="."]
+offset_left = 1040.0
+offset_top = 597.0
+offset_right = 1115.0
+offset_bottom = 627.0
+
+[node name="Label" type="Label" parent="ShopBuyingButton"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 3.0
+offset_right = 62.0
+offset_bottom = 26.0
+text = "Buy"
+
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="ShopBuyingButton" to="." method="_on_shop_buying_button_pressed"]

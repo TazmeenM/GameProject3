@@ -7,7 +7,10 @@ class_name ShopBuying extends Node2D
 @onready var product_label: Label = $ProductLabel
 
 static var isBought = {
-	"pear": false
+	"orange": {
+		"price": 20,
+		"bought": false
+		}
 }
 
 
@@ -27,6 +30,8 @@ func _process(delta: float) -> void:
 
 
 func _on_buy_button_pressed() -> void:
+	print("Buy button pressed")
+	
 	for key in isBought:
-		if isBought[key] == true:
-			pass
+		if key == imageName:
+			isBought[key]["bought"] = true
