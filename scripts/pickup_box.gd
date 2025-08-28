@@ -1,6 +1,9 @@
 extends Area2D
 
 @onready var robot_1: CharacterBody2D = $"../Background/Robot1"
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+
 
 var resourcePackageSize = 5
 

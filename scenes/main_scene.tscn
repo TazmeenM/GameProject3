@@ -30,7 +30,7 @@ imageName = "apple"
 [node name="Resources" parent="." instance=ExtResource("5_gubc5")]
 position = Vector2(1, 4)
 
-[node name="DropoffBoxSystemOrange2" parent="." instance=ExtResource("7_c16ls")]
+[node name="DropoffBoxSystemOrange" parent="." instance=ExtResource("7_c16ls")]
 position = Vector2(764, 130)
 imageName = "orange"
 
@@ -48,11 +48,11 @@ offset_bottom = 626.0
 
 [node name="Label" type="Label" parent="ShopButton"]
 layout_mode = 0
-offset_left = 19.0
+offset_left = 25.0
 offset_top = 3.0
-offset_right = 59.0
+offset_right = 65.0
 offset_bottom = 26.0
-text = "Shop"
+text = "Sell"
 
 [node name="Money" parent="." instance=ExtResource("7_18nlu")]
 position = Vector2(12, 5)

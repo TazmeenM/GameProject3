@@ -22,6 +22,7 @@ offset_right = 1086.0
 offset_bottom = 87.0
 icon = ExtResource("3_032fp")
 expand_icon = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -36,7 +37,7 @@ position = Vector2(103, 120)
 imageName = "apple"
 
 [node name="ShopRowOrange" parent="." instance=ExtResource("5_2fc2m")]
-position = Vector2(104, 166)
+position = Vector2(104, 201)
 imageName = "orange"
 
 [node name="Money" parent="." instance=ExtResource("6_8r1wq")]
