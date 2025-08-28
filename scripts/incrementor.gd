@@ -32,3 +32,12 @@ func _on_increase_button_pressed() -> void:
 			quantity.text = str(numberOfUnits)
 		else:
 			print("Number of Apples Available: " + str(Resources.numberOfApples))
+			
+	elif shop_row.imageName == "orange":
+		print("Image Name Received")
+		if numberOfUnits < Resources.numberOfOranges:
+			numberOfUnits += 1
+			print("Number of Units Selling: " + str(numberOfUnits))
+			quantity.text = str(numberOfUnits)
+		else:
+			print("Number of Oranges Available: " + str(Resources.numberOfOranges))

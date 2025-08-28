@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://be3cs46toooov"]
+
+[ext_resource type="Script" uid="uid://b7fc1gy67bv66" path="res://scripts/money.gd" id="1_v42d4"]
+
+[node name="Money" type="Node2D"]
+script = ExtResource("1_v42d4")
+
+[node name="MoneyCounter" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
