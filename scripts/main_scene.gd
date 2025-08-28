@@ -70,3 +70,7 @@ func _on_shop_button_pressed() -> void:
 
 func _on_shop_buying_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/shop_buying.tscn")
+
+
+func _on_astronaut_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/astronaut.tscn")

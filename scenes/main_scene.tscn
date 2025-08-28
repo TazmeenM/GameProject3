@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbyeeuhst86xk"]
+[gd_scene load_steps=12 format=3 uid="uid://bbyeeuhst86xk"]
 
 [ext_resource type="Script" uid="uid://bgea0vlonh6e" path="res://scripts/main_scene.gd" id="1_rt2n2"]
 [ext_resource type="Texture2D" uid="uid://c7xhs0rda0fuf" path="res://assets/sprites/background.png" id="1_w2twt"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://be3cs46toooov" path="res://scenes/money.tscn" id="7_18nlu"]
 [ext_resource type="PackedScene" uid="uid://c3xq84qntalv7" path="res://scenes/dropoff_box_system.tscn" id="7_c16ls"]
 [ext_resource type="Script" uid="uid://ciuj0ygp8r21e" path="res://scripts/player.gd" id="8_18nlu"]
+[ext_resource type="Texture2D" uid="uid://bqi0edq41tkrl" path="res://assets/sprites/astronaut.png" id="9_c1pb6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18nlu"]
 texture = ExtResource("1_w2twt")
@@ -104,5 +105,14 @@ text = "Buy"
 [node name="Money" parent="Player/Camera2D" instance=ExtResource("7_18nlu")]
 position = Vector2(-557, -315)
 
+[node name="AstronautButton" type="Button" parent="."]
+offset_left = 1075.0
+offset_top = 15.0
+offset_right = 1126.0
+offset_bottom = 74.0
+icon = ExtResource("9_c1pb6")
+expand_icon = true
+
 [connection signal="pressed" from="Player/Camera2D/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Player/Camera2D/ShopBuyingButton" to="." method="_on_shop_buying_button_pressed"]
+[connection signal="pressed" from="AstronautButton" to="." method="_on_astronaut_button_pressed"]
