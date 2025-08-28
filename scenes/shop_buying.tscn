@@ -31,7 +31,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="ShopRowBuyingOrange" parent="." instance=ExtResource("6_8n8qt")]
-position = Vector2(107, 273)
+position = Vector2(107, 184)
 imageName = "orange"
+
+[node name="ShopRowBuyingPear" parent="." instance=ExtResource("6_8n8qt")]
+position = Vector2(114, 277)
+imageName = "pear"
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

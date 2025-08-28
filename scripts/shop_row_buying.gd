@@ -12,10 +12,13 @@ static var isBought = {
 	"orange": {
 		"price": 20,
 		"bought": false
-		}
+	},
+	"pear": {
+		"price": 50,
+		"bought": false
+	},
+	
 }
-
-
 
 
 # Called when the node enters the scene tree for the first time.

@@ -14,7 +14,7 @@ var amountOfResources = 0
 var capacity: float = 10
 var numberOfFruitsAtOnce = 1
 
-var fruits = [["apple", 10], ["orange", 15], ["pear", 20], ["cherries", 25]]
+var fruits = [["apple", 10], ["orange", 15], ["pear", 25], ["cherries", 40]]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
