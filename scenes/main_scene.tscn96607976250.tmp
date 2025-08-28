@@ -29,7 +29,7 @@ texture = ExtResource("1_w2twt")
 tile_set = SubResource("TileSet_c1pb6")
 format = 2
 layer_0/z_index = -1
-layer_0/tile_data = PackedInt32Array(1638441, 0, 0, 1638524, 0, 0, 1703894, 0, 0, 1703811, 0, 0, 1703728, 0, 0)
+layer_0/tile_data = PackedInt32Array(1638441, 0, 0, 1638524, 0, 0)
 
 [node name="AppleRobot" parent="." instance=ExtResource("2_pu3yx")]
 z_index = 2
@@ -55,6 +55,9 @@ position = Vector2(767, 476)
 [node name="OrangeRobot" parent="." instance=ExtResource("2_pu3yx")]
 position = Vector2(1335, 638)
 
+[node name="Money" parent="." instance=ExtResource("7_18nlu")]
+position = Vector2(12, 5)
+
 [node name="PickupBoxPear" parent="." instance=ExtResource("3_gubc5")]
 position = Vector2(942, 475)
 
@@ -70,8 +73,8 @@ script = ExtResource("8_18nlu")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(569, 320)
-limit_left = -1000
-limit_right = 10000
+limit_left = 0
+limit_right = 1000
 
 [node name="ShopButton" type="Button" parent="Player/Camera2D"]
 offset_left = -543.0
@@ -100,9 +103,6 @@ offset_top = 3.0
 offset_right = 62.0
 offset_bottom = 26.0
 text = "Buy"
-
-[node name="Money" parent="Player/Camera2D" instance=ExtResource("7_18nlu")]
-position = Vector2(-557, -315)
 
 [connection signal="pressed" from="Player/Camera2D/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Player/Camera2D/ShopBuyingButton" to="." method="_on_shop_buying_button_pressed"]
