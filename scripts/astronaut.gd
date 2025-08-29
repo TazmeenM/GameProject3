@@ -5,13 +5,21 @@ extends Node2D
 @onready var orange_button: Button = $OrangeButton
 @onready var pear_button: Button = $PearButton
 
+var healthBar: ProgressBar = null
+
 var maximumHealth = 100
 var health = 100
+
+var fruitHealth = {
+	"apple": 2,
+	"orange": 3,
+	"pear": 5
+}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	healthBar.rect_size = (Vector2(300, 200))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,21 +42,31 @@ func _process(delta: float) -> void:
 
 func decreaseHealth(healthDecreased: int) -> void:
 	health -= healthDecreased
+	health = clamp(health, 0, maximumHealth)
+	if healthBar:
+		healthBar.value = health
 
 func increaseHealth(healthIncreased: int) -> void:
 	health += healthIncreased
+	health = clamp(health, 0, maximumHealth)
+	print("Health: " + str(health))
+	if healthBar:
+		healthBar.value = health
 
 
 func _on_apple_button_pressed() -> void:
-	pass # Replace with function body.
+	Resources.removeFruits(1, "apple")
+	increaseHealth(fruitHealth["apple"])
 
 
 func _on_orange_button_pressed() -> void:
-	pass # Replace with function body.
+	Resources.removeFruits(1, "orange")
+	increaseHealth(fruitHealth["orange"])
 
 
 func _on_pear_button_pressed() -> void:
-	pass # Replace with function body.
+	Resources.removeFruits(1, "pear")
+	increaseHealth(fruitHealth["pear"])
 
 
 func _on_main_scene_button_pressed() -> void:
