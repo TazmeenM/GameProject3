@@ -5,10 +5,8 @@ extends Node2D
 @onready var orange_button: Button = $OrangeButton
 @onready var pear_button: Button = $PearButton
 
-var healthBar: ProgressBar = null
-
 var maximumHealth = 100
-var health = 100
+var health: int
 
 var fruitHealth = {
 	"apple": 2,
@@ -19,55 +17,28 @@ var fruitHealth = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	healthBar.rect_size = (Vector2(300, 200))
+	health = 100
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if apple_button:
-		if Resources.numberOfApples > 0:
-			apple_button.disabled = false
-		elif Resources.numberOfApples <= 0:
-			apple_button.disabled = true
-	if orange_button:
-		if Resources.numberOfOranges > 0:
-			orange_button.disabled = false
-		elif Resources.numberOfOranges <= 0:
-			orange_button.disabled = true
-	if pear_button:
-		if Resources.numberOfPears > 0:
-			pear_button.disabled = false
-		elif Resources.numberOfPears <= 0:
-			pear_button.disabled = true
+	pass
 
 func decreaseHealth(healthDecreased: int) -> void:
-	health -= healthDecreased
-	health = clamp(health, 0, maximumHealth)
-	if healthBar:
-		healthBar.value = health
+	if (health - healthDecreased > 0):
+		health -= healthDecreased
+	else:
+		health = 0
+	print("Current health after decrease: " + str(health))
+	if health_bar:
+		health_bar.value = health
 
 func increaseHealth(healthIncreased: int) -> void:
-	health += healthIncreased
-	health = clamp(health, 0, maximumHealth)
-	print("Health: " + str(health))
-	if healthBar:
-		healthBar.value = health
-
-
-func _on_apple_button_pressed() -> void:
-	Resources.removeFruits(1, "apple")
-	increaseHealth(fruitHealth["apple"])
-
-
-func _on_orange_button_pressed() -> void:
-	Resources.removeFruits(1, "orange")
-	increaseHealth(fruitHealth["orange"])
-
-
-func _on_pear_button_pressed() -> void:
-	Resources.removeFruits(1, "pear")
-	increaseHealth(fruitHealth["pear"])
-
-
-func _on_main_scene_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+	print("Health before increase: " + str(health))
+	if (health + healthIncreased < 100):
+		health += healthIncreased
+	else:
+		health = 100
+	print("Current health after increase: " + str(health))
+	if health_bar:
+		health_bar.value = health
