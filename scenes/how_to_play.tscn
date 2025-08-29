@@ -1,25 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://u4lur4dj0uju"]
+[gd_scene load_steps=4 format=3 uid="uid://u4lur4dj0uju"]
 
 [ext_resource type="Script" uid="uid://txvavaop64u3" path="res://scripts/how_to_play.gd" id="1_88ieg"]
-[ext_resource type="Texture2D" uid="uid://c7xhs0rda0fuf" path="res://assets/sprites/background.png" id="1_d4i75"]
+[ext_resource type="Texture2D" uid="uid://deg5sjv6v35i0" path="res://assets/sprites/shopBackground.png" id="2_30apa"]
+[ext_resource type="Texture2D" uid="uid://dw2ng2cmluk7a" path="res://assets/sprites/howToPlay1.png" id="3_30apa"]
 
 [node name="HowToPlay" type="Node2D"]
 script = ExtResource("1_88ieg")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(576.476, 362)
-scale = Vector2(0.861905, 0.861905)
-texture = ExtResource("1_d4i75")
+position = Vector2(575.607, 324.107)
+scale = Vector2(11.5079, 6.43786)
+texture = ExtResource("2_30apa")
 
 [node name="InstructionImage" type="Sprite2D" parent="."]
+position = Vector2(575, 324.5)
+scale = Vector2(0.54537, 0.54537)
+texture = ExtResource("3_30apa")
 
 [node name="NextButton" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1002.0
+offset_top = 569.0
+offset_right = 1077.0
+offset_bottom = 600.0
 text = "Next"
 
 [node name="PreviousButton" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 897.0
+offset_top = 569.0
+offset_right = 972.0
+offset_bottom = 600.0
 text = "Previous"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]
