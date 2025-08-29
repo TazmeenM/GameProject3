@@ -1,11 +1,25 @@
-[gd_scene format=3 uid="uid://1wr5rb6e4txs"]
+[gd_scene load_steps=2 format=3 uid="uid://1wr5rb6e4txs"]
+
+[ext_resource type="Script" uid="uid://gpxg6sv7k8nh" path="res://scripts/game_over.gd" id="1_xeevv"]
 
 [node name="GameOver" type="Node2D"]
+script = ExtResource("1_xeevv")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 1148.0
 offset_bottom = 660.0
 theme_override_font_sizes/font_size = 24
-text = "GAME OVER"
+text = "GAME OVER
+
+Your progress will be reset."
 autowrap_mode = 3
 clip_text = true
+
+[node name="OKButton" type="Button" parent="."]
+offset_left = 544.0
+offset_top = 492.0
+offset_right = 667.0
+offset_bottom = 545.0
+text = "OK"
+
+[connection signal="pressed" from="OKButton" to="." method="_on_ok_button_pressed"]

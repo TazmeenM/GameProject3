@@ -8,7 +8,7 @@ var timer = Timer.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_child(timer)
-	timer.wait_time = 0.1
+	timer.wait_time = 0.5
 	timer.one_shot = false
 	timer.timeout.connect(onTimerEnded)
 	timer.start()
@@ -21,3 +21,6 @@ func _process(delta: float) -> void:
 func onTimerEnded() -> void:
 	Astronaut.decreaseHealth(1)
 	print("Timer went off")
+
+func reset() -> void:
+	timer.stop()

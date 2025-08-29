@@ -47,3 +47,4 @@ func _on_buy_button_pressed() -> void:
 static func reset() -> void:
 	for key in isBought:
 		isBought[key]["bought"] = false
+		print(key)

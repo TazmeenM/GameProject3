@@ -7,7 +7,9 @@ class_name Shop extends Node2D
 func _ready() -> void:
 	if Astronaut.resetGame == true:
 		reset()
-		get_tree().change_scene_to_file("res://scenes/shop_buying.tscn")
+		print("Shop Buying")
+		ShopBuying.reset()
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

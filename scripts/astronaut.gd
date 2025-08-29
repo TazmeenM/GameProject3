@@ -26,7 +26,9 @@ func _process(delta: float) -> void:
 	if health == 0:
 		resetGame = true
 		reset()
-		get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+		HealthTimer.reset()
+		print("Main Scene")
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func decreaseHealth(healthDecreased: int) -> void:
 	if (health - healthDecreased > 0):

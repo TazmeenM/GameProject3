@@ -28,6 +28,7 @@ func _on_sell_button_pressed() -> void:
 	incrementor.quantity.text = "0"
 
 func reset() -> void:
+	print("Shop row reset")
 	incrementor.numberOfUnits = 0
 	incrementor.quantity.text = "0"
 	

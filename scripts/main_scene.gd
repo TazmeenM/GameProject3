@@ -16,13 +16,11 @@ var isBought = false
 func _ready() -> void:
 	if Astronaut.resetGame == true:
 		reset()
+		print("Shop")
 		get_tree().change_scene_to_file("res://scenes/shop.tscn")
 	orangeStationVisibility()
 	pearStationVisibility()
 	
-	
-		
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
