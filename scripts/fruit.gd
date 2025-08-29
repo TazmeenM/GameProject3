@@ -40,3 +40,7 @@ func pickUp() -> void:
 	amountOfResources = 0
 	resources.addFruits(numberOfFruitsAtOnce, imageName)
 	dropoff_box.numberOfResources = 0
+
+func reset() -> void:
+	percentageOfFruit = 0
+	amountOfResources = 0

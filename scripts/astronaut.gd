@@ -7,6 +7,7 @@ extends Node2D
 
 var maximumHealth = 100
 var health: int
+var resetGame = false
 
 var fruitHealth = {
 	"apple": 2,
@@ -42,3 +43,6 @@ func increaseHealth(healthIncreased: int) -> void:
 	print("Current health after increase: " + str(health))
 	if health_bar:
 		health_bar.value = health
+
+func reset() -> void:
+	health = 100

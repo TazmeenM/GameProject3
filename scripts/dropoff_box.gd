@@ -34,3 +34,6 @@ func _on_body_entered(body: Node2D) -> void:
 		body.numberOfResourcesCarrying = 0
 		body.yDirection = body.yDirection*-1
 		print(body.yDirection)
+
+func reset() -> void:
+	numberOfResources = 0

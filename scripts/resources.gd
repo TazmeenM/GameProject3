@@ -56,3 +56,11 @@ static func removeFruits(numberOfFruitsRemoved: int, fruitName: String) -> void:
 
 static func fruitWorth(fruitName: String) -> int:
 	return fruitValues[fruitName]
+
+static func reset() -> void:
+	numberOfResources = 0
+	numberOfFruits = 0
+	numberOfApples = 0
+	numberOfOranges = 0
+	numberOfPears = 0
+	money = 0

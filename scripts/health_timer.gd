@@ -21,3 +21,6 @@ func _process(delta: float) -> void:
 func onTimerEnded() -> void:
 	Astronaut.decreaseHealth(1)
 	print("Timer went off")
+	
+func reset() -> void:
+	timer.reset()

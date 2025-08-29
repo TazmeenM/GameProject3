@@ -43,3 +43,7 @@ func _on_buy_button_pressed() -> void:
 			if Resources.money >= isBought[key]["price"]:
 				isBought[key]["bought"] = true
 				Resources.money -= isBought[key]["price"]
+
+static func reset() -> void:
+	for key in isBought:
+		isBought[key]["bought"] = false

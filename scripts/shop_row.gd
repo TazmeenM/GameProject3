@@ -26,5 +26,9 @@ func _on_sell_button_pressed() -> void:
 	Resources.money += incrementor.numberOfUnits*Resources.fruitWorth(imageName)
 	incrementor.numberOfUnits = 0
 	incrementor.quantity.text = "0"
+
+func reset() -> void:
+	incrementor.numberOfUnits = 0
+	incrementor.quantity.text = "0"
 	
 		

@@ -74,3 +74,8 @@ func _on_shop_buying_button_pressed() -> void:
 
 func _on_astronaut_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/astronaut.tscn")
+
+func reset() -> void:
+	dropoff_box_system_orange.reset()
+	dropoff_box_system_pear.reset()
+	Resources.reset()
