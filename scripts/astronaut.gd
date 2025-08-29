@@ -23,7 +23,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if health == 0:
+		resetGame = true
+		reset()
+		get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 
 func decreaseHealth(healthDecreased: int) -> void:
 	if (health - healthDecreased > 0):

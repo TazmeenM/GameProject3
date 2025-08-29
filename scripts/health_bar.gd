@@ -11,8 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	value = Astronaut.health
-	if value == 0:
-		Astronaut.resetGame = true
-		Astronaut.reset()
-		HealthTimer.reset()
-		get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+	#if value == 0:
+	#	Astronaut.resetGame = true
+	#	Astronaut.reset()
+	#	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")

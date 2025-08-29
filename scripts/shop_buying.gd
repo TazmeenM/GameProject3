@@ -1,4 +1,4 @@
-class_name Shop extends Node2D
+class_name BuyingShop extends Node2D
 @onready var shop_row_buying_orange: ShopBuying = $ShopRowBuyingOrange
 @onready var shop_row_buying_pear: ShopBuying = $ShopRowBuyingPear
 
@@ -6,7 +6,9 @@ class_name Shop extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Astronaut.resetGame == true:
+		reset()
+		get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
