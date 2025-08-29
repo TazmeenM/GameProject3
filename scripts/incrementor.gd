@@ -3,6 +3,8 @@ extends Node2D
 var numberOfUnits = 0
 @export var fruit: Fruit
 @onready var quantity: Label = $Quantity
+@onready var decrease_button: Button = $DecreaseButton
+@onready var increase_button: Button = $IncreaseButton
 @onready var shop_row: Node2D = $".."
 
 
@@ -41,3 +43,8 @@ func _on_increase_button_pressed() -> void:
 			quantity.text = str(numberOfUnits)
 		else:
 			print("Number of Oranges Available: " + str(Resources.numberOfOranges))
+
+func setVisibility(visibility: bool) -> void:
+	quantity.visible = visibility
+	decrease_button.visible = visibility
+	increase_button.visible = visibility

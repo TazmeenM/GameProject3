@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://crnb5jnmwcv7d"]
+[gd_scene load_steps=3 format=3 uid="uid://crnb5jnmwcv7d"]
 
 [ext_resource type="Script" uid="uid://dsrs5fdrenh7f" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://c7xhs0rda0fuf" path="res://assets/sprites/background.png" id="2_ekxnf"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_l6cm7")
@@ -11,5 +12,15 @@ offset_top = 85.0
 offset_right = 647.0
 offset_bottom = 132.0
 text = "Play"
+
+[node name="HowToPlayButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(588.833, 370)
+scale = Vector2(0.883333, 0.883333)
+texture = ExtResource("2_ekxnf")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

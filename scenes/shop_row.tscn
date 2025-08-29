@@ -12,9 +12,9 @@ script = ExtResource("1_exkpj")
 position = Vector2(87, -2)
 
 [node name="SellButton" type="Button" parent="."]
-offset_left = 226.0
+offset_left = 323.0
 offset_top = -11.0
-offset_right = 273.0
+offset_right = 370.0
 offset_bottom = 8.0
 metadata/_edit_use_anchors_ = true
 
@@ -34,5 +34,12 @@ offset_right = 31.0
 offset_bottom = -16.0
 text = "PLACEHOLDER"
 metadata/_edit_use_anchors_ = true
+
+[node name="PriceLabel" type="Label" parent="."]
+offset_left = 186.0
+offset_top = -15.0
+offset_right = 233.0
+offset_bottom = 8.0
+text = "Price: "
 
 [connection signal="pressed" from="SellButton" to="." method="_on_sell_button_pressed"]

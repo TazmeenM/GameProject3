@@ -3,7 +3,7 @@ class_name ShopBuying extends Node2D
 @export var imagePath = "res://assets/sprites/"
 @export var imageName = ""
 @onready var fruit_image: Sprite2D = $FruitImage
-@onready var incrementor: Node2D = $Incrementor
+@onready var buy_button: Button = $BuyButton
 @onready var product_label: Label = $ProductLabel
 @onready var price_label: Label = $PriceLabel
 

@@ -4,7 +4,9 @@ extends Node2D
 @export var imageName = ""
 @onready var fruit_image: Sprite2D = $FruitImage
 @onready var incrementor: Node2D = $Incrementor
+@onready var sell_button: Button = $SellButton
 @onready var product_label: Label = $ProductLabel
+@onready var price_label: Label = $PriceLabel
 
 
 
@@ -14,6 +16,8 @@ func _ready() -> void:
 	imagePath += imageName + ".png"
 	fruit_image.texture = load(imagePath)
 	product_label.text = imageName.to_upper()
+	price_label.text = "Price: " + str(Resources.fruitValues[imageName])
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

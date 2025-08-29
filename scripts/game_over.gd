@@ -1,9 +1,16 @@
 extends Node2D
 
+@onready var gameOverLabel: Label = $GameOverLabel
+@onready var sad_face_label: Label = $SadFaceLabel
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	#gameOverLabel.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	gameOverLabel.position.y = 120
+	gameOverLabel.position.x = 200
+	sad_face_label.position.y = 100
+	sad_face_label.position.x = 100
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
