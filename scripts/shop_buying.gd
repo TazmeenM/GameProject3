@@ -19,6 +19,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	orangeBuyingVisibility()
+	pearBuyingVisibility()
 
 
 func _on_exit_button_pressed() -> void:
@@ -31,5 +32,9 @@ func reset() -> void:
 func orangeBuyingVisibility() -> void:
 	isBought = ShopBuying.isBought["orange"]["bought"]
 	shop_row_buying_orange.buy_button.disabled = isBought
+
+func pearBuyingVisibility() -> void:
+	isBought = ShopBuying.isBought["pear"]["bought"]
+	shop_row_buying_pear.buy_button.disabled = isBought
 	
 	

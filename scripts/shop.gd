@@ -1,6 +1,8 @@
 class_name Shop extends Node2D
 @onready var shop_row_apple: Node2D = $ShopRowApple
 @onready var shop_row_orange: Node2D = $ShopRowOrange
+@onready var shop_row_pear: Node2D = $ShopRowPear
+
 
 var isBought = false
 
@@ -13,6 +15,7 @@ func _ready() -> void:
 		ShopBuying.reset()
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	orangeSellingVisibility()
+	pearSellingVisibility()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +33,14 @@ func orangeSellingVisibility() -> void:
 	shop_row_orange.product_label.visible = isBought
 	shop_row_orange.price_label.visible = isBought
 	shop_row_orange.sell_button.visible = isBought
+
+func pearSellingVisibility() -> void:
+	isBought = ShopBuying.isBought["pear"]["bought"]
+	shop_row_pear.fruit_image.visible = isBought
+	shop_row_pear.incrementor.setVisibility(isBought)
+	shop_row_pear.product_label.visible = isBought
+	shop_row_pear.price_label.visible = isBought
+	shop_row_pear.sell_button.visible = isBought
 
 func reset() -> void:
 	shop_row_apple.reset()

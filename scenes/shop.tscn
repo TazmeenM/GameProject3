@@ -40,6 +40,10 @@ imageName = "apple"
 position = Vector2(104, 201)
 imageName = "orange"
 
+[node name="ShopRowPear" parent="." instance=ExtResource("5_2fc2m")]
+position = Vector2(108, 279)
+imageName = "pear"
+
 [node name="Money" parent="." instance=ExtResource("6_8r1wq")]
 position = Vector2(67, 39)
 
