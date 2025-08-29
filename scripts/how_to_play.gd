@@ -6,7 +6,7 @@ extends Node2D
 
 var imageNumber = 0
 var imageDirectoryRoot = "res://assets/sprites/howToPlay"
-var images = ["1", "2", "3", "4", "5", "6", "7", "8"]
+var images = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

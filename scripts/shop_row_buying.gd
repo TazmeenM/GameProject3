@@ -17,6 +17,10 @@ static var isBought = {
 		"price": 50,
 		"bought": false
 	},
+	"watermelon": {
+		"price": 100,
+		"bought": false
+	}
 	
 }
 
