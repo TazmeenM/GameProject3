@@ -14,15 +14,18 @@ var amountOfResources = 0
 var capacity: float = 10
 var numberOfFruitsAtOnce = 1
 
-var fruits = [["apple", 10], ["orange", 15], ["pear", 25], ["cherries", 40]]
+var fruits = {
+	"apple": 10, 
+	"orange": 15, 
+	"pear": 25, 
+	"watermelon": 40
+	}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	imageName = dropoff_box_system.imageName
-	for fruit in fruits:
-		if imageName == fruit[0]:
-			capacity = fruit[1]
-			print("Fruit Capacity: " + str(capacity))
+	print(fruits[imageName])
+	capacity = fruits[imageName]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

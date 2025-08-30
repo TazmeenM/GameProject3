@@ -1,4 +1,4 @@
-extends Node2D
+class_name SellingShop extends Node2D
 
 @export var imagePath = "res://assets/sprites/"
 @export var imageName = ""
@@ -9,14 +9,19 @@ extends Node2D
 @onready var price_label: Label = $PriceLabel
 
 
-
+static var fruitPrices = {
+	"apple": 10,
+	"orange": 15,
+	"pear": 20,
+	"watermelon": 30
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	imagePath += imageName + ".png"
 	fruit_image.texture = load(imagePath)
 	product_label.text = imageName.to_upper()
-	price_label.text = "Price: " + str(Resources.fruitValues[imageName])
+	price_label.text = "Price: " + str(fruitPrices[imageName])
 	
 
 

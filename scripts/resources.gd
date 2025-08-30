@@ -5,12 +5,14 @@ static var numberOfFruits = 0
 static var numberOfApples = 0
 static var numberOfOranges = 0
 static var numberOfPears = 0
+static var numberOfWatermelons = 0
 static var money = 0
 
 static var fruitValues = {
 	"apple": 10,
-	"orange": 15,
-	"pear": 25
+	"orange": 20,
+	"pear": 30,
+	"watermelon": 50
 }
 static var appleWorth = 10
 static var orangeWorth = 15
@@ -40,6 +42,9 @@ static func addFruits(numberOfFruitsAdded: int, fruitName: String) -> void:
 	elif fruitName == "pear":
 		numberOfPears += numberOfFruitsAdded
 		print("Number of Pears: " + str(numberOfPears))
+	if fruitName == "watermelon":
+		numberOfWatermelons += numberOfFruitsAdded
+		print("Number of Apples: " + str(numberOfWatermelons))
 
 static func removeFruits(numberOfFruitsRemoved: int, fruitName: String) -> void:
 	numberOfFruits += numberOfFruitsRemoved
@@ -53,6 +58,9 @@ static func removeFruits(numberOfFruitsRemoved: int, fruitName: String) -> void:
 	elif fruitName == "pear":
 		numberOfPears -= numberOfFruitsRemoved
 		print("Number of Pears: " + str(numberOfPears))
+	elif fruitName == "watermelon":
+		numberOfWatermelons -= numberOfFruitsRemoved
+		print("Number of Pears: " + str(numberOfWatermelons))
 
 static func fruitWorth(fruitName: String) -> int:
 	return fruitValues[fruitName]
@@ -63,4 +71,5 @@ static func reset() -> void:
 	numberOfApples = 0
 	numberOfOranges = 0
 	numberOfPears = 0
+	numberOfWatermelons = 0
 	money = 0

@@ -1,6 +1,7 @@
 class_name BuyingShop extends Node2D
 @onready var shop_row_buying_orange: ShopBuying = $ShopRowBuyingOrange
 @onready var shop_row_buying_pear: ShopBuying = $ShopRowBuyingPear
+@onready var shop_row_buying_watermelon: ShopBuying = $ShopRowBuyingWatermelon
 
 var isBought = false
 
@@ -13,6 +14,8 @@ func _ready() -> void:
 		print("Game Over Scene")
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	orangeBuyingVisibility()
+	pearBuyingVisibility()
+	watermelonBuyingVisibility()
 
 
 
@@ -20,6 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	orangeBuyingVisibility()
 	pearBuyingVisibility()
+	watermelonBuyingVisibility()
 
 
 func _on_exit_button_pressed() -> void:
@@ -36,5 +40,9 @@ func orangeBuyingVisibility() -> void:
 func pearBuyingVisibility() -> void:
 	isBought = ShopBuying.isBought["pear"]["bought"]
 	shop_row_buying_pear.buy_button.disabled = isBought
+
+func watermelonBuyingVisibility() -> void:
+	isBought = ShopBuying.isBought["watermelon"]["bought"]
+	shop_row_buying_watermelon.buy_button.disabled = isBought
 	
 	

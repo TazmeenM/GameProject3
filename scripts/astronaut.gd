@@ -12,7 +12,8 @@ var resetGame = false
 var fruitHealth = {
 	"apple": 2,
 	"orange": 3,
-	"pear": 5
+	"pear": 5,
+	"watermelon": 10
 }
 
 

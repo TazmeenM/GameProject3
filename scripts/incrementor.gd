@@ -43,6 +43,24 @@ func _on_increase_button_pressed() -> void:
 			quantity.text = str(numberOfUnits)
 		else:
 			print("Number of Oranges Available: " + str(Resources.numberOfOranges))
+	
+	elif shop_row.imageName == "pear":
+		print("Image Name Received")
+		if numberOfUnits < Resources.numberOfPears:
+			numberOfUnits += 1
+			print("Number of Units Selling: " + str(numberOfUnits))
+			quantity.text = str(numberOfUnits)
+		else:
+			print("Number of PEars Available: " + str(Resources.numberOfPears))
+
+	elif shop_row.imageName == "watermelon":
+		print("Image Name Received")
+		if numberOfUnits < Resources.numberOfWatermelons:
+			numberOfUnits += 1
+			print("Number of Units Selling: " + str(numberOfUnits))
+			quantity.text = str(numberOfUnits)
+		else:
+			print("Number of Watermelons Available: " + str(Resources.numberOfWatermelons))
 
 func setVisibility(visibility: bool) -> void:
 	quantity.visible = visibility

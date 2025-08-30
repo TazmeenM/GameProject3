@@ -5,7 +5,9 @@ extends Node2D
 @onready var pickup_box_pear: Area2D = $PickupBoxPear
 @onready var dropoff_box_system_pear: Node2D = $DropoffBoxSystemPear
 @onready var pear_robot: Robot = $PearRobot
-
+@onready var dropoff_box_system_watermelon: Node2D = $DropoffBoxSystemWatermelon
+@onready var pickup_box_watermelon: Area2D = $PickupBoxWatermelon
+@onready var watermelon_robot: Robot = $WatermelonRobot
 
 
 var isBought = false
@@ -20,6 +22,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://scenes/shop.tscn")
 	orangeStationVisibility()
 	pearStationVisibility()
+	watermelonStationVisibility()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,6 +66,24 @@ func pearStationVisibility() -> void:
 	#For the robot
 	pear_robot.animated_sprite_2d.visible = isBought
 	pear_robot.collision_shape_2d.visible = isBought
+
+func watermelonStationVisibility() -> void:
+	isBought = ShopBuying.isBought["watermelon"]["bought"]
+	pickup_box_watermelon.sprite_2d.visible = isBought
+	pickup_box_watermelon.collision_shape_2d.visible = isBought
+	
+	#For the drop-off box
+	dropoff_box_system_watermelon.dropoff_box.sprite_2d.visible = isBought
+	dropoff_box_system_watermelon.dropoff_box.sprite_2d.visible = isBought
+	dropoff_box_system_watermelon.dropoff_box.sprite_2d.visible = isBought
+	
+	dropoff_box_system_watermelon._3d_printer.sprite_2d.visible = isBought
+	dropoff_box_system_watermelon.fruit_button.disabled = !isBought
+	dropoff_box_system_watermelon.fruit.sprite_2d.visible = isBought
+	
+	#For the robot
+	watermelon_robot.animated_sprite_2d.visible = isBought
+	watermelon_robot.collision_shape_2d.visible = isBought
 
 
 func _on_shop_button_pressed() -> void:

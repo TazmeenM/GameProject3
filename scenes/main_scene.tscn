@@ -113,13 +113,13 @@ offset_bottom = 74.0
 icon = ExtResource("9_c1pb6")
 expand_icon = true
 
-[node name="DropoffBoxSystem" parent="." instance=ExtResource("7_c16ls")]
+[node name="DropoffBoxSystemWatermelon" parent="." instance=ExtResource("7_c16ls")]
 position = Vector2(1122, 132)
 
-[node name="PickupBox" parent="." instance=ExtResource("3_gubc5")]
+[node name="PickupBoxWatermelon" parent="." instance=ExtResource("3_gubc5")]
 position = Vector2(1126, 474)
 
-[node name="Robot" parent="." instance=ExtResource("2_pu3yx")]
+[node name="WatermelonRobot" parent="." instance=ExtResource("2_pu3yx")]
 position = Vector2(1697, 637)
 
 [connection signal="pressed" from="Player/Camera2D/ShopButton" to="." method="_on_shop_button_pressed"]

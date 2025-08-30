@@ -2,6 +2,7 @@ class_name Shop extends Node2D
 @onready var shop_row_apple: Node2D = $ShopRowApple
 @onready var shop_row_orange: Node2D = $ShopRowOrange
 @onready var shop_row_pear: Node2D = $ShopRowPear
+@onready var shop_row_watermelon: Node2D = $ShopRowWatermelon
 
 
 var isBought = false
@@ -42,7 +43,17 @@ func pearSellingVisibility() -> void:
 	shop_row_pear.price_label.visible = isBought
 	shop_row_pear.sell_button.visible = isBought
 
+func watermelonSellingVisibility() -> void:
+	isBought = ShopBuying.isBought["watermelon"]["bought"]
+	shop_row_watermelon.fruit_image.visible = isBought
+	shop_row_watermelon.incrementor.setVisibility(isBought)
+	shop_row_watermelon.product_label.visible = isBought
+	shop_row_watermelon.price_label.visible = isBought
+	shop_row_watermelon.sell_button.visible = isBought
+
 func reset() -> void:
 	shop_row_apple.reset()
 	shop_row_orange.reset()
+	shop_row_pear.reset()
+	shop_row_watermelon.reset()
 	
