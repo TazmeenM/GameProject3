@@ -40,5 +40,6 @@ imageName = "pear"
 
 [node name="ShopRowBuyingWatermelon" parent="." instance=ExtResource("6_8n8qt")]
 position = Vector2(110, 358)
+imageName = "watermelon"
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

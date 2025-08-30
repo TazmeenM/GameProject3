@@ -4,6 +4,7 @@ extends Node2D
 @onready var apple_button: Button = $AppleButton
 @onready var orange_button: Button = $OrangeButton
 @onready var pear_button: Button = $PearButton
+@onready var watermelon_button: Button = $WatermelonButton
 
 var isBought = false
 
@@ -13,7 +14,8 @@ var health: int
 var fruitHealth = {
 	"apple": 2,
 	"orange": 3,
-	"pear": 5
+	"pear": 5,
+	"watermelon": 8
 }
 
 
@@ -48,6 +50,15 @@ func _process(delta: float) -> void:
 				pear_button.disabled = true
 		else:
 			pear_button.visible = false
+	if watermelon_button:
+		isBought = ShopBuying.isBought["pear"]["bought"]
+		if isBought:
+			if Resources.numberOfPears > 0:
+				watermelon_button.disabled = false
+			elif Resources.numberOfPears <= 0:
+				watermelon_button.disabled = true
+		else:
+			watermelon_button.visible = false
 
 
 func _on_apple_button_pressed() -> void:
@@ -68,3 +79,8 @@ func _on_pear_button_pressed() -> void:
 
 func _on_main_scene_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+
+
+func _on_watermelon_button_pressed() -> void:
+	Resources.removeFruits(1, "watermelon")
+	Astronaut.increaseHealth(fruitHealth["watermelon"])

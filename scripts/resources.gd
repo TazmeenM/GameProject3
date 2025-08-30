@@ -10,9 +10,9 @@ static var money = 0
 
 static var fruitValues = {
 	"apple": 10,
-	"orange": 20,
-	"pear": 30,
-	"watermelon": 50
+	"orange": 15,
+	"pear": 20,
+	"watermelon": 30
 }
 static var appleWorth = 10
 static var orangeWorth = 15

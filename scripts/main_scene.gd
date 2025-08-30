@@ -8,6 +8,8 @@ extends Node2D
 @onready var dropoff_box_system_watermelon: Node2D = $DropoffBoxSystemWatermelon
 @onready var pickup_box_watermelon: Area2D = $PickupBoxWatermelon
 @onready var watermelon_robot: Robot = $WatermelonRobot
+@onready var astronaut_button: Button = $Player/Camera2D/AstronautButton
+
 
 
 var isBought = false
@@ -20,6 +22,8 @@ func _ready() -> void:
 		reset()
 		print("Shop")
 		get_tree().change_scene_to_file("res://scenes/shop.tscn")
+
+		
 	orangeStationVisibility()
 	pearStationVisibility()
 	watermelonStationVisibility()
@@ -27,7 +31,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Astronaut.health <= 20:
+		astronaut_button.modulate = Color(1.0, 0.0, 0.0, 0.3)
+	else:
+		astronaut_button.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	
 
 func orangeStationVisibility() -> void:

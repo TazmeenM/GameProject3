@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://e87dq34pyhgw"]
+[gd_scene load_steps=9 format=3 uid="uid://e87dq34pyhgw"]
 
 [ext_resource type="Script" uid="uid://b2b3yuhlga781" path="res://scripts/astronautScene.gd" id="1_75ag2"]
 [ext_resource type="Texture2D" uid="uid://bqi0edq41tkrl" path="res://assets/sprites/astronaut.png" id="1_v06w7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dakxm34x14na" path="res://assets/sprites/orange.png" id="5_75ag2"]
 [ext_resource type="Texture2D" uid="uid://umhuuwm0an5d" path="res://assets/sprites/pear.png" id="6_a04db"]
 [ext_resource type="Texture2D" uid="uid://dp726xcnm21ns" path="res://assets/sprites/mars.png" id="7_75ag2"]
+[ext_resource type="Texture2D" uid="uid://dn12g146k1cn7" path="res://assets/sprites/watermelon.png" id="8_a04db"]
 
 [node name="Astronaut" type="Node2D"]
 script = ExtResource("1_75ag2")
@@ -42,9 +43,10 @@ expand_icon = true
 [node name="PearButton" type="Button" parent="."]
 offset_left = 16.0
 offset_top = 305.0
-offset_right = 59.0
-offset_bottom = 370.0
+offset_right = 53.0
+offset_bottom = 353.0
 icon = ExtResource("6_a04db")
+icon_alignment = 1
 expand_icon = true
 
 [node name="FoodLabel" type="Label" parent="."]
@@ -66,7 +68,16 @@ expand_icon = true
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="WatermelonButton" type="Button" parent="."]
+offset_left = 71.0
+offset_top = 306.0
+offset_right = 118.0
+offset_bottom = 353.0
+icon = ExtResource("8_a04db")
+expand_icon = true
+
 [connection signal="pressed" from="AppleButton" to="." method="_on_apple_button_pressed"]
 [connection signal="pressed" from="OrangeButton" to="." method="_on_orange_button_pressed"]
 [connection signal="pressed" from="PearButton" to="." method="_on_pear_button_pressed"]
 [connection signal="pressed" from="MainSceneButton" to="." method="_on_main_scene_button_pressed"]
+[connection signal="pressed" from="WatermelonButton" to="." method="_on_watermelon_button_pressed"]

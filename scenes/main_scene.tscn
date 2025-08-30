@@ -105,16 +105,17 @@ text = "Buy"
 [node name="Money" parent="Player/Camera2D" instance=ExtResource("7_18nlu")]
 position = Vector2(-557, -315)
 
-[node name="AstronautButton" type="Button" parent="."]
-offset_left = 1075.0
-offset_top = 15.0
-offset_right = 1126.0
-offset_bottom = 74.0
+[node name="AstronautButton" type="Button" parent="Player/Camera2D"]
+offset_left = 506.0
+offset_top = -305.0
+offset_right = 557.0
+offset_bottom = -246.0
 icon = ExtResource("9_c1pb6")
 expand_icon = true
 
 [node name="DropoffBoxSystemWatermelon" parent="." instance=ExtResource("7_c16ls")]
 position = Vector2(1122, 132)
+imageName = "watermelon"
 
 [node name="PickupBoxWatermelon" parent="." instance=ExtResource("3_gubc5")]
 position = Vector2(1126, 474)
@@ -124,4 +125,4 @@ position = Vector2(1697, 637)
 
 [connection signal="pressed" from="Player/Camera2D/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Player/Camera2D/ShopBuyingButton" to="." method="_on_shop_buying_button_pressed"]
-[connection signal="pressed" from="AstronautButton" to="." method="_on_astronaut_button_pressed"]
+[connection signal="pressed" from="Player/Camera2D/AstronautButton" to="." method="_on_astronaut_button_pressed"]

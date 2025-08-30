@@ -23,6 +23,7 @@ var fruits = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("Image Name:")
 	imageName = dropoff_box_system.imageName
 	print(fruits[imageName])
 	capacity = fruits[imageName]

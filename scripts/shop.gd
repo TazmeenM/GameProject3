@@ -17,6 +17,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 	orangeSellingVisibility()
 	pearSellingVisibility()
+	watermelonSellingVisibility()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
