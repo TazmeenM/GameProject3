@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3ost1ki1bk31"]
+
+[ext_resource type="Script" uid="uid://bt8juujmmla0m" path="res://scripts/shop_buying_upgrades.gd" id="1_vy3us"]
+[ext_resource type="Texture2D" uid="uid://deg5sjv6v35i0" path="res://assets/sprites/shopBackground.png" id="2_q5yd6"]
+[ext_resource type="Texture2D" uid="uid://1b4i1vljuvq6" path="res://assets/sprites/exitButton.png" id="3_8u3ae"]
+[ext_resource type="PackedScene" uid="uid://be3cs46toooov" path="res://scenes/money.tscn" id="4_rn7jt"]
+[ext_resource type="PackedScene" uid="uid://c7fnt5ctewmt4" path="res://scenes/shop_row_buying_upgrades.tscn" id="5_vy3us"]
+
+[node name="ShopBuyingUpgrades" type="Node2D"]
+script = ExtResource("1_vy3us")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 323.5)
+scale = Vector2(11.5, 6.47)
+texture = ExtResource("2_q5yd6")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1041.0
+offset_top = 42.0
+offset_right = 1086.0
+offset_bottom = 87.0
+icon = ExtResource("3_8u3ae")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Money" parent="." instance=ExtResource("4_rn7jt")]
+position = Vector2(67, 39)
+
+[node name="ProductLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopRowBuyingUpgradesApple" parent="." instance=ExtResource("5_vy3us")]
+position = Vector2(107, 185)
+imageName = "apple"
+
+[node name="ShopRowBuyingUpgradesOrange" parent="." instance=ExtResource("5_vy3us")]
+position = Vector2(109, 276)
+imageName = "orange"
+
+[node name="ShopRowBuyingUpgradesPear" parent="." instance=ExtResource("5_vy3us")]
+position = Vector2(110, 357)
+imageName = "pear"
+
+[node name="ShopRowBuyingUpgradesWatermelon" parent="." instance=ExtResource("5_vy3us")]
+position = Vector2(113, 440)
+imageName = "watermelon"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

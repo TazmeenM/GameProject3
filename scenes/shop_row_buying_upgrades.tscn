@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7fnt5ctewmt4"]
+
+[ext_resource type="Script" uid="uid://p0bvvc8dv2k0" path="res://scripts/shop_row_buying_upgrades.gd" id="1_rgwvn"]
+
+[node name="ShopRowBuyingUpgrades" type="Node2D"]
+script = ExtResource("1_rgwvn")
+
+[node name="FruitImage" type="Sprite2D" parent="."]
+
+[node name="BuyButton" type="Button" parent="."]
+offset_left = 226.0
+offset_top = -11.0
+offset_right = 273.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="BuyButton"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -3.0
+offset_right = 50.0
+offset_bottom = 20.0
+text = "Buy"
+metadata/_edit_use_anchors_ = true
+
+[node name="ProductLabel" type="Label" parent="."]
+offset_left = -9.0
+offset_top = -39.0
+offset_right = 31.0
+offset_bottom = -16.0
+text = "PLACEHOLDER"
+metadata/_edit_use_anchors_ = true
+
+[node name="PriceLabel" type="Label" parent="."]
+offset_left = 71.0
+offset_top = -12.0
+offset_right = 111.0
+offset_bottom = 11.0
+text = "PRICE:"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BuyButton" to="." method="_on_sell_button_pressed"]
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

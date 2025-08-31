@@ -29,6 +29,7 @@ position = Vector2(67, 39)
 [node name="ProductLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
 
 [node name="ShopRowBuyingOrange" parent="." instance=ExtResource("6_8n8qt")]
 position = Vector2(107, 184)
@@ -42,4 +43,19 @@ imageName = "pear"
 position = Vector2(110, 358)
 imageName = "watermelon"
 
+[node name="FruitsButton" type="Button" parent="."]
+offset_left = 95.0
+offset_top = 81.0
+offset_right = 196.0
+offset_bottom = 112.0
+text = "Fruits"
+
+[node name="UpgradesButton" type="Button" parent="."]
+offset_left = 289.0
+offset_top = 81.0
+offset_right = 390.0
+offset_bottom = 112.0
+text = "Upgrades"
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UpgradesButton" to="." method="_on_upgrades_button_pressed"]

@@ -6,7 +6,6 @@ class_name BuyingShop extends Node2D
 var isBought = false
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Astronaut.resetGame == true:
@@ -32,6 +31,7 @@ func _on_exit_button_pressed() -> void:
 func reset() -> void:
 	shop_row_buying_orange.reset()
 	shop_row_buying_pear.reset()
+	shop_row_buying_watermelon.reset()
 
 func orangeBuyingVisibility() -> void:
 	isBought = ShopBuying.isBought["orange"]["bought"]
@@ -44,5 +44,7 @@ func pearBuyingVisibility() -> void:
 func watermelonBuyingVisibility() -> void:
 	isBought = ShopBuying.isBought["watermelon"]["bought"]
 	shop_row_buying_watermelon.buy_button.disabled = isBought
-	
-	
+
+
+func _on_upgrades_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/shop_buying_upgrades.tscn")
